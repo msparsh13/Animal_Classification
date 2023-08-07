@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Animal  Classification</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <div >
+    <h1>Animal Classification</h1>
+  <form  action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label for="pwd">Upload Your Image :        
+        <input type="file" name="my_image" id="pwd">
+      </label> 
+    </div>
+
+    <div class="form-group">        
+      <div >
+        <button type="submit" class="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="div">
+	{% if prediction %}
+  <img src="{{img_path}}" height="400px" width="400px">
+	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+	{% endif %}
+</div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
